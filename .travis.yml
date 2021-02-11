@@ -10,6 +10,7 @@ before_script:
   - psql -U postgres -c "ALTER USER decide CREATEDB"
 language: python
 python:
+  - "3.7"
   - "3.6"
   - "2"
 install:
@@ -19,5 +20,6 @@ script:
   - cp local_settings.travis.py local_settings.py
   - coverage run --branch --source=. ./manage.py test --keepdb
   - coverage xml
-
-
+branches:
+  only:
+    - master
