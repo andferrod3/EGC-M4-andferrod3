@@ -23,3 +23,8 @@ script:
 branches:
   only:
     - master
+deploy:
+  provider: heroku
+  app: examen-jinto
+  strategy: git
+  apikey: 8003ae90-1071-4cee-8b6c-c9c7d4fb6a8c
